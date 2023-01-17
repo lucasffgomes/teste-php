@@ -1,0 +1,15 @@
+{
+    "name": "lfgomes/teste-php",
+    "autoload": {
+        "psr-4": {
+            "app\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Lucas Gomes",
+            "email": "58189878+lucasffgomes@users.noreply.github.com"
+        }
+    ],
+    "require": {}
+}
