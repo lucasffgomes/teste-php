@@ -11,5 +11,7 @@
             "email": "58189878+lucasffgomes@users.noreply.github.com"
         }
     ],
-    "require": {}
+    "require": {
+        "league/plates": "^3.4"
+    }
 }
