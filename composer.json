@@ -14,6 +14,9 @@
             "app/helpers/helpers.php"
         ]
     },
+    "scripts":{
+        "server": "php -S localhost:8000 -t public"
+    },
     "authors": [
         {
             "name": "Lucas Gomes",
