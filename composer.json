@@ -5,6 +5,7 @@
             "app\\": "app"
         },
         "files": [
+            "app/helpers/constants.php",
             "app/router/router.php",
             "app/core/controller.php"
         ]
@@ -15,7 +16,5 @@
             "email": "58189878+lucasffgomes@users.noreply.github.com"
         }
     ],
-    "require": {
-        "league/plates": "^3.4"
-    }
+    "require": {}
 }

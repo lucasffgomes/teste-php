@@ -22,14 +22,13 @@ try {
     }
 
     // VERIFICA SE O ARQUIVO VIEW EXISTE.
-    if (!file_exists(dirname(__FILE__, 3) . '/app/views/' . $data['view'] . '.php')) {
+    if (!file_exists(VIEWS . $data['view'])) {
         throw new Exception("Essa view {$data['view']} não existe.");
     }
 
-    $arr = $templates = new League\Plates\Engine('/app/views/');
-
-    // RENDERIZA O TEMPLATE.
-    echo $templates->render($data['view'], $data['data']);
+    extract($data['data']);
+    $view = $data['view'];
+    require VIEWS . 'master.php';
 } catch (Exception $e) {
     echo $e->getMessage();
 }
