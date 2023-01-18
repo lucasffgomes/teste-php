@@ -3,8 +3,8 @@ Projeto de sistema web utilizando as 4 operações básicas com banco de dados: 
 
 ## Introdução
 
-Esse projeto está utilizando uma arquitetura separada em controllers e views seguindo boas práticas e padrões modernos de codificação.
-Utilizando TailwindCSS para o frontend e o DaisyUI para os componentes tornando a criação muito mais agilizada com uma interface moderna e minimalista.
+Esse projeto está utilizando uma arquitetura constituída em controllers e views, seguindo boas práticas e padrões modernos de codificação.
+Utilizando TailwindCSS para o frontend e o DaisyUI para os componentes tornando sua manutenção muito mais fácil e interface moderna.
 
 ## Instalar e rodar o projeto
 
