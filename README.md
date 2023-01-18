@@ -10,14 +10,14 @@ Utilizando TailwindCSS para o frontend e o DaisyUI para os componentes tornando 
 
 ### Dependências globais
 
-É necessário ter todas as seguintes dependências instaladas na sua máquina:
+É necessário ter todas as seguintes dependências instaladas:
 
 - PHP v8.2 (ou versão superior);
 - Composer v2.3.7 (ou versão superior);
 - MySQL v5.6 (ou versão superior);
 - Node.js LTS v16 (ou versão superior).
 
-### Dependências globais
+### Dependências locais
 
 Após baixar/clonar o reposítório, entre na pasta do mesmo e instale as dependências locais
 com os seguintes comandos abaixo:
