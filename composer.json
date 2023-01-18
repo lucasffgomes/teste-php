@@ -11,6 +11,8 @@
             "app/database/connect.php",
             "app/database/fetch.php",
             "app/database/create.php",
+            "app/database/update.php",
+            "app/database/delete.php",
             "app/helpers/helpers.php",
             "app/helpers/old.php",
             "app/helpers/redirect.php",
