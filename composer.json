@@ -12,7 +12,8 @@
             "app/database/fetch.php",
             "app/database/create.php",
             "app/helpers/helpers.php",
-            "app/helpers/old.php"
+            "app/helpers/old.php",
+            "app/helpers/flash.php"
         ]
     },
     "scripts":{
