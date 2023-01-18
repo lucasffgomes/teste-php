@@ -2,8 +2,12 @@
     "name": "lfgomes/teste-php",
     "autoload": {
         "psr-4": {
-            "app\\": "app/"
-        }
+            "app\\": "app"
+        },
+        "files": [
+            "app/router/router.php",
+            "app/core/controller.php"
+        ]
     },
     "authors": [
         {
