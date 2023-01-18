@@ -7,6 +7,7 @@
 return [
     'POST' => [],
     'GET' => [
-        '/' => 'Home@index'
+        '/' => 'Home@index',
+        '/listar/fornecedores' => 'Fornecedor@index'
     ]
 ];
