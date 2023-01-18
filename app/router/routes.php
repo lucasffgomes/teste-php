@@ -13,6 +13,7 @@ return [
         '/' => 'Home@index',
         '/listar/fornecedores' => 'Fornecedor@index',
         '/adicionar/fornecedor' => 'Fornecedor@create',
-        '/fornecedor/editar/[0-9-]+' => 'Fornecedor@edit'
+        '/fornecedor/editar/[0-9-]+' => 'Fornecedor@edit',
+        '/fornecedor/deletar/[0-9-]+' => 'Fornecedor@destroy'
     ]
 ];
