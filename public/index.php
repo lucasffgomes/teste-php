@@ -3,6 +3,10 @@
 session_start();
 require '../vendor/autoload.php';
 
+// LEITURA DAS VARIAVEIS DE AMBIENTE
+$dotenv = Dotenv\Dotenv::createImmutable(dirname(__FILE__,2));
+$dotenv->load();
+
 try {
     $data = router();
 
