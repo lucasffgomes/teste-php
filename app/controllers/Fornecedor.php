@@ -21,8 +21,6 @@ class Fornecedor
 
     public function create()
     {
-        var_dump($_SESSION);
-
         return [
             'view' => 'adicionar-fornecedor.php',
             'data' => [
@@ -59,5 +57,20 @@ class Fornecedor
         deleteOld('old');
 
         return redirect('/listar/fornecedores');
+    }
+
+    public function edit($params)
+    {
+        read('fornecedor');
+        where('id_fornecedor', $params['editar']);
+        $fornecedor = execute();
+
+        return [
+            'view' => 'editar-fornecedor.php',
+            'data' => [
+                'title' => 'Editar fornecedor - Teste PHP',
+                'fornecedor' => $fornecedor
+            ]
+        ];
     }
 }
