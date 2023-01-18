@@ -30,6 +30,9 @@ npm install
 composer install
 ```
 
+### Importar base de dados
+Faça a importação da base de dados a partir do arquivo dump.sql que está na src/ 
+
 ### Executar aplicação
 
 Para executar a aplicação, rode o comando abaixo:
