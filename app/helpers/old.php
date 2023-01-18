@@ -18,3 +18,8 @@ function getOld($index)
         return $old ?? '';
     }
 }
+
+function deleteOld($index)
+{
+    unset($_SESSION[$index]);
+}
