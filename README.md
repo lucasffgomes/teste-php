@@ -43,4 +43,5 @@ composer run server
 ```
 
 Com isso, a aplicação será executada, sendo acessível pela url (http://localhost:8000).
+
 Pronto! Agora é só inserir novas features para criar um produto melhor. Faça bom uso!
