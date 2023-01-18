@@ -15,7 +15,7 @@ Os dados de empresa são fictícios e foram tirados do site (https://4devs.com.b
 
 - PHP v8.2 (ou versão superior);
 - Composer v2.3.7 (ou versão superior);
-- MySQL v5.6 (ou versão superior);
+- MySQL v5.7.33 (ou versão superior);
 - Node.js LTS v16 (ou versão superior).
 
 ## Dependências locais
