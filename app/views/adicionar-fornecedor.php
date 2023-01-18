@@ -103,7 +103,7 @@
                     </div>
                     <div class="divider"></div>
                     <div class="flex justify-end">
-                        <button class="btn btn-primary" type="submit">Adicionar fornecedor</button>
+                        <button class="btn btn-outline btn-primary" type="submit">Adicionar fornecedor</button>
                     </div>
                 </div>
             </form>
