@@ -73,4 +73,30 @@ class Fornecedor
             ]
         ];
     }
+
+    public function update($params)
+    {
+        $validate = validate([
+            'nome_vendedor'     => 'required',
+            'email_vendedor'    => 'required',
+            'cnpj'              => 'required',
+            'razao_social'      => 'required',
+            'nome_fantasia'     => 'required',
+            'telefone'          => 'required',
+            'celular_vendedor'  => 'required',
+        ], persistInputs: true);
+
+        if (!$validate) {
+            return redirect('/fornecedor/editar'. $params['editar']);
+        }
+
+        $updated = update('fornecedor', $validate, ['id_fornecedor' => $params['editar']]);
+
+        if (!$updated) {
+            setFlash('message', 'Ocorreu um erro ao editar, tente novamente em breve');
+            return redirect('/fornecedor/editar'. $params['editar']);
+        }
+
+        return redirect('/listar/fornecedores');
+    }
 }
