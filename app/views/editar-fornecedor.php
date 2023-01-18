@@ -24,6 +24,7 @@
         </div>
         <div class="my-5">
             <?php if (count($fornecedor) > 0) : ?>
+                <?php echo getFlash('message') ?>
                 <form class="form-control space-y-5" action="/fornecedor/editar/<?php echo $fornecedor[0]->id_fornecedor ?>" method="post">
                     <div class="w-full space-y-5">
                         <div class="flex flex-row gap-5">
