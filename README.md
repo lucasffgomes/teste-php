@@ -8,7 +8,7 @@ Utilizando TailwindCSS para o frontend e o DaisyUI para os componentes tornando 
 
 ## Instalar e rodar o projeto
 
-### Dependências globais
+## Dependências globais
 
 É necessário ter todas as seguintes dependências instaladas:
 
@@ -17,7 +17,7 @@ Utilizando TailwindCSS para o frontend e o DaisyUI para os componentes tornando 
 - MySQL v5.6 (ou versão superior);
 - Node.js LTS v16 (ou versão superior).
 
-### Dependências locais
+## Dependências locais
 
 Após baixar/clonar o reposítório, entre na pasta do mesmo e instale as dependências locais
 com os seguintes comandos abaixo:
@@ -30,10 +30,10 @@ npm install
 composer install
 ```
 
-### Importar base de dados
+## Importar base de dados
 Faça a importação da base de dados a partir do arquivo dump.sql que está na src/ 
 
-### Executar aplicação
+## Executar aplicação
 
 Para executar a aplicação, rode o comando abaixo:
 
@@ -41,4 +41,5 @@ Para executar a aplicação, rode o comando abaixo:
 composer run server
 ```
 
-Com isso, a aplicação será executada, sendo acessível pela url (http://localhost:8000)
+Com isso, a aplicação será executada, sendo acessível pela url (http://localhost:8000).
+Pronto! Agora é só inserir novas features para criar um produto melhor. Faça bom uso!
