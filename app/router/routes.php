@@ -5,9 +5,14 @@
  */
 
 return [
-    'POST' => [],
+    'POST' => [
+        '/adicionar/fornecedor' => 'Fornecedor@store',
+        '/fornecedor/editar/[0-9-]+' => 'Fornecedor@update'
+    ],
     'GET' => [
         '/' => 'Home@index',
-        '/listar/fornecedores' => 'Fornecedor@index'
+        '/listar/fornecedores' => 'Fornecedor@index',
+        '/adicionar/fornecedor' => 'Fornecedor@create',
+        '/fornecedor/editar/[0-9-]+' => 'Fornecedor@edit'
     ]
 ];
