@@ -5,12 +5,12 @@
                 <a href="/" class="btn btn-ghost normal-case text-xl">Teste PHP</a>
             </div>
             <div class="flex-none">
-                <ul class="menu menu-horizontal px-1">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/listar/produtos">Listar produtos</a></li>
+                <ul class="menu menu-horizontal px-1 space-x-2">
+                    <li><a class="active" href="/">Home</a></li>
                     <li><a href="/listar/fornecedores">Listar fornecedores</a></li>
-                    <li><a href="/adicionar/fornecedor">Adicionar produto</a></li>
                     <li><a href="/adicionar/produto">Adicionar fornecedor</a></li>
+                    <li><a href="/listar/produtos">Listar produtos</a></li>
+                    <li><a href="/adicionar/fornecedor">Adicionar produto</a></li>
                 </ul>
             </div>
         </div>
