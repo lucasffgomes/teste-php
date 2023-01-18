@@ -1,6 +1,6 @@
 <?php
 
-function exactMatchUriInArrayRoutes(array $uri, array $routes):array
+function exactMatchUriInArrayRoutes(array|string $uri, array $routes):array
 {
     return (array_key_exists($uri, $routes)) ? 
     [$uri => $routes[$uri]] : 
