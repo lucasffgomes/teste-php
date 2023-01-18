@@ -9,7 +9,7 @@
     <title><?php echo $title ?></title>
 </head>
 
-<body>
+<body class="font-lato">
     <?php require VIEWS . $view; ?>
 </body>
 
