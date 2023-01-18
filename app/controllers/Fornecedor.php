@@ -87,14 +87,26 @@ class Fornecedor
         ], persistInputs: true);
 
         if (!$validate) {
-            return redirect('/fornecedor/editar'. $params['editar']);
+            return redirect('/fornecedor/editar' . $params['editar']);
         }
 
         $updated = update('fornecedor', $validate, ['id_fornecedor' => $params['editar']]);
 
         if (!$updated) {
             setFlash('message', 'Ocorreu um erro ao editar, tente novamente em breve');
-            return redirect('/fornecedor/editar'. $params['editar']);
+            return redirect('/fornecedor/editar' . $params['editar']);
+        }
+
+        return redirect('/listar/fornecedores');
+    }
+
+    public function destroy($params)
+    {
+        $deleted = delete('fornecedor', ['id_fornecedor' => $params['deletar']]);
+
+        if (!$deleted) {
+            setFlash('message', 'Ocorreu um erro ao deletar, tente novamente em breve');
+            return redirect('/listar/fornecedores');
         }
 
         return redirect('/listar/fornecedores');
