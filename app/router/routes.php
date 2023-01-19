@@ -20,13 +20,13 @@ return [
         '/' => 'Home@index',
 
         // fornecedores
-        '/listar/fornecedores' => 'Fornecedor@index',
+        '/listar/fornecedores/' => 'Fornecedor@index',
         '/adicionar/fornecedor' => 'Fornecedor@create',
         '/fornecedor/editar/[0-9-]+' => 'Fornecedor@edit',
         '/fornecedor/deletar/[0-9-]+' => 'Fornecedor@destroy',
 
         // produtos
-        '/listar/produtos' => 'Produto@index',
+        '/listar/produtos/' => 'Produto@index',
         '/adicionar/produto' => 'Produto@create',
         '/produto/editar/[0-9-]+' => 'Produto@edit',
         '/produto/deletar/[0-9-]+' => 'Produto@destroy'
