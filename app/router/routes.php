@@ -9,10 +9,12 @@ return [
         // fornecedores
         '/adicionar/fornecedor' => 'Fornecedor@store',
         '/fornecedor/editar/[0-9-]+' => 'Fornecedor@update',
+        '/fornecedores/deletar/todos' => 'Fornecedor@destroy',
 
         // produtos
         '/adicionar/produto' => 'Produto@store',
-        '/produto/editar/[0-9-]+' => 'Produto@update'
+        '/produto/editar/[0-9-]+' => 'Produto@update',
+        '/produtos/deletar/todos' => 'Produtos@destroy'
     ],
     'GET' => [
         '/' => 'Home@index',
