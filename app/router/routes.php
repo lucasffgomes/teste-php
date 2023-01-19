@@ -9,7 +9,7 @@ return [
         // fornecedores
         '/adicionar/fornecedor' => 'Fornecedor@store',
         '/fornecedor/editar/[0-9-]+' => 'Fornecedor@update',
-        '/fornecedores/deletar/todos' => 'Fornecedor@destroy',
+        '/fornecedores/deletar/todos' => 'Fornecedores@destroy',
 
         // produtos
         '/adicionar/produto' => 'Produto@store',
