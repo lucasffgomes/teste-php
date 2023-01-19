@@ -1,11 +1,12 @@
 # Teste-PHP
-Projeto de sistema web utilizando as 4 operações básicas com banco de dados: Create, Read, Update e Delete.
+
+Projeto de sistema web utilizando as 4 operações básicas com banco de dados: `Create`, `Read`, `Update` e `Delete`.
 
 ## Introdução
 
 Esse projeto está utilizando uma arquitetura constituída em controllers e views, seguindo boas práticas e padrões modernos de codificação.
-Utilizando TailwindCSS para o frontend e o DaisyUI para os componentes tornando sua manutenção muito mais fácil e interface moderna.
-Os dados de empresa são fictícios e foram tirados do site (https://4devs.com.br). 
+Utilizando `TailwindCSS` para o frontend e o `DaisyUI` para os componentes tornando sua manutenção muito mais fácil e interface moderna.
+Os dados das empresa são fictícios e foram tirados do site (https://4devs.com.br). 
 
 ## Instalar e rodar o projeto
 
@@ -32,10 +33,12 @@ composer install
 ```
 
 ## Importar base de dados
-Faça a importação da base de dados a partir do arquivo dump.sql que está no diretório src/ 
+
+Faça a importação da base de dados a partir do arquivo `dump.sql` que está no diretório `src/` 
 
 ## Variáveis de ambiente
-Altere o valores das variáveis no arquivo .env de acordo com seu ambiente.
+
+Altere o valores das variáveis no arquivo `.env` de acordo com seu ambiente.
 
 ## Executar aplicação
 
@@ -47,4 +50,8 @@ composer run server
 
 Com isso, a aplicação será executada, sendo acessível pela url (http://localhost:8000).
 
-Pronto! Agora é só inserir novas features para criar um produto melhor. Faça bom uso!
+#### E a aplicação deverá ter algo parecido com isso
+
+![image](src/screencapture-homepage.png)
+
+Pronto! Agora é só inserir novas funcionalidades para criar um produto melhor. Faça bom uso!
