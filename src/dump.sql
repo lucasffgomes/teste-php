@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `teste-php` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci */;
-USE `teste-php`;
 -- MySQL dump 10.13  Distrib 8.0.31, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: teste-php
@@ -34,7 +32,7 @@ CREATE TABLE `fornecedor` (
   `telefone` varchar(15) COLLATE utf8mb4_unicode_520_ci NOT NULL,
   `celular_vendedor` varchar(15) COLLATE utf8mb4_unicode_520_ci NOT NULL,
   PRIMARY KEY (`id_fornecedor`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -43,7 +41,7 @@ CREATE TABLE `fornecedor` (
 
 LOCK TABLES `fornecedor` WRITE;
 /*!40000 ALTER TABLE `fornecedor` DISABLE KEYS */;
-INSERT INTO `fornecedor` VALUES (6,'Sebastiana Joana','contabil@sebastianaejoanaadvocaciame.com.br','46.130.615/0001-33','Sebastiana e Joana Advocacia ME','Sebastiana e Joana Advocacia ME','(12) 3545-2574','(12) 99434-3481'),(7,'Louisse Benício','administracao@louiseebeniciopizzariame.com.br','70.998.415/0001-81','Louise e Benício Pizzaria ME','Louise e Benício Pizzaria ME','(15) 2714-6601','(15) 98768-6218'),(8,'Luiza Mateus','posvenda@luizaemateusmarketingme.com.br','05.726.062/0001-07','Luiza e Mateus Marketing ME','Luiza e Mateus Marketing ME','(11) 3628-2441','(11) 99252-5288'),(9,'Regina Nair','producao@reginaenairtelecomunicacoesltda.com.br','82.633.579/0001-94','Regina e Nair Telecomunicações Ltda','Regina e Nair Telecomunicações Ltda','(11) 2761-7146','(11) 98419-7563'),(10,'Caroline Vitor','vendas@carolineevitorbuffetltda.com.br','79.598.699/0001-93','Caroline e Vitor Buffet Ltda','Caroline e Vitor Buffet Ltda','(16) 3837-3621','(16) 99658-4575'),(11,'Thomas Maitê','tesouraria@thomasemaitemarcenarialtda.com.br','09.609.438/0001-46','Thomas e Maitê Marcenaria Ltda','Thomas e Maitê Marcenaria Ltda','(19) 3620-4991','(19) 99207-5082');
+INSERT INTO `fornecedor` VALUES (6,'Sebastiana Joana','contabil@sebastianaejoanaadvocaciame.com.br','46.130.615/0001-33','Sebastiana e Joana Advocacia ME','Sebastiana e Joana Advocacia ME','(12) 3545-2574','(12) 99434-3481'),(8,'Luiza Mateus','posvenda@luizaemateusmarketingme.com.br','05.726.062/0001-07','Luiza e Mateus Marketing ME','Luiza e Mateus Marketing ME','(11) 3628-2441','(11) 99252-5288'),(10,'Caroline Vitor','vendas@carolineevitorbuffetltda.com.br','79.598.699/0001-93','Caroline e Vitor Buffet Ltda','Caroline e Vitor Buffet Ltda','(16) 3837-3621','(16) 99658-4575');
 /*!40000 ALTER TABLE `fornecedor` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -61,8 +59,10 @@ CREATE TABLE `produto` (
   `valor_produto` decimal(8,2) NOT NULL,
   `peso` decimal(8,2) NOT NULL,
   `quantidade_estoque` int(11) NOT NULL,
-  PRIMARY KEY (`id_produto`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+  PRIMARY KEY (`id_produto`),
+  KEY `fk_produto_fornecedor_idx` (`id_fornecedor`),
+  CONSTRAINT `fk` FOREIGN KEY (`id_fornecedor`) REFERENCES `fornecedor` (`id_fornecedor`) ON DELETE CASCADE ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -71,6 +71,7 @@ CREATE TABLE `produto` (
 
 LOCK TABLES `produto` WRITE;
 /*!40000 ALTER TABLE `produto` DISABLE KEYS */;
+INSERT INTO `produto` VALUES (8,10,'Farinha de Trigo',6.50,500.00,4),(9,6,'Grampeador',25.00,0.12,14);
 /*!40000 ALTER TABLE `produto` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -83,4 +84,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-01-18  4:28:04
+-- Dump completed on 2023-01-19  6:04:51
