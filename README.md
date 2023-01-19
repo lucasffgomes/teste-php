@@ -32,7 +32,10 @@ composer install
 ```
 
 ## Importar base de dados
-Faça a importação da base de dados a partir do arquivo dump.sql que está na src/ 
+Faça a importação da base de dados a partir do arquivo dump.sql que está no diretório src/ 
+
+## Variáveis de ambiente
+Altere o valores das variáveis no arquivo .env de acordo com seu ambiente.
 
 ## Executar aplicação
 
