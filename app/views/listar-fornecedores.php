@@ -22,64 +22,85 @@
         <div class="text-2xl text-zinc-600 font-medium">
             <h2>Fornecedores</h2>
         </div>
-        <div class="overflow-x-auto my-5">
-            <table class="table w-full">
-                <thead>
-                    <tr>
-                        <th>Nome vendedor</th>
-                        <th>Email</th>
-                        <th>CNPJ</th>
-                        <th>Razão Social</th>
-                        <th>Nome Fantasia</th>
-                        <th>Telefone</th>
-                        <th>Celular</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php foreach ($fornecedores as $fornecedor) : ?>
-                        <tr>
-                            <th><?php echo $fornecedor->nome_vendedor ?></th>
-                            <td><?php echo $fornecedor->email_vendedor ?></td>
-                            <td><?php echo $fornecedor->cnpj ?></td>
-                            <td><?php echo $fornecedor->razao_social ?></td>
-                            <td><?php echo $fornecedor->nome_fantasia ?></td>
-                            <td><?php echo $fornecedor->telefone ?></td>
-                            <td><?php echo $fornecedor->celular_vendedor ?></td>
-                            <td>
-                                <div class="tooltip" data-tip="Editar">
-                                    <a class="btn btn-square btn-outline" href="/fornecedor/editar/<?php echo $fornecedor->id_fornecedor ?>">
-                                        <svg class="w-5 h-5" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                                            <path fill="none" d="M0 0h24v24H0z" />
-                                            <path d="M15.728 9.686l-1.414-1.414L5 17.586V19h1.414l9.314-9.314zm1.414-1.414l1.414-1.414-1.414-1.414-1.414 1.414 1.414 1.414zM7.242 21H3v-4.243L16.435 3.322a1 1 0 0 1 1.414 0l2.829 2.829a1 1 0 0 1 0 1.414L7.243 21z" />
-                                        </svg>
-                                    </a>
-                                </div>
-                                <div class="tooltip" data-tip="Excluir">
-                                    <a class="btn btn-square btn-outline" href="/fornecedor/deletar/<?php echo $fornecedor->id_fornecedor ?>">
-                                        <svg class="w-5 h-5" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                                            <path fill="none" d="M0 0h24v24H0z" />
-                                            <path d="M17 6h5v2h-2v13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V8H2V6h5V3a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v3zm1 2H6v12h12V8zm-4.586 6l1.768 1.768-1.414 1.414L12 15.414l-1.768 1.768-1.414-1.414L10.586 14l-1.768-1.768 1.414-1.414L12 12.586l1.768-1.768 1.414 1.414L13.414 14zM9 4v2h6V4H9z" />
-                                        </svg>
-                                    </a>
-                                </div>
-                            </td>
-                        </tr>
-                    <?php endforeach ?>
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <th>Nome vendedor</th>
-                        <th>Email</th>
-                        <th>CNPJ</th>
-                        <th>Razão Social</th>
-                        <th>Nome Fantasia</th>
-                        <th>Telefone</th>
-                        <th>Celular</th>
-                        <th></th>
-                    </tr>
-                </tfoot>
-            </table>
-        </div>
+        <?php if (count($fornecedores) > 0) : ?>
+            <form action="/fornecedores/deletar/todos" method="post">
+                <div class="overflow-x-auto my-5">
+                    <table class="table w-full">
+                        <thead>
+                            <tr>
+                                <th>Excluir?</th>
+                                <th>Nome vendedor</th>
+                                <th>Email</th>
+                                <th>CNPJ</th>
+                                <th>Razão Social</th>
+                                <th>Nome Fantasia</th>
+                                <th>Telefone</th>
+                                <th>Celular</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($fornecedores as $fornecedor) : ?>
+                                <tr>
+                                    <td><input type="checkbox" class="checkbox" name="<?php echo $fornecedor->id_fornecedor ?>" /></td>
+                                    <th><?php echo $fornecedor->nome_vendedor ?></th>
+                                    <td><?php echo $fornecedor->email_vendedor ?></td>
+                                    <td><?php echo $fornecedor->cnpj ?></td>
+                                    <td><?php echo $fornecedor->razao_social ?></td>
+                                    <td><?php echo $fornecedor->nome_fantasia ?></td>
+                                    <td><?php echo $fornecedor->telefone ?></td>
+                                    <td><?php echo $fornecedor->celular_vendedor ?></td>
+                                    <td>
+                                        <div class="tooltip" data-tip="Editar">
+                                            <a class="btn btn-square btn-outline" href="/fornecedor/editar/<?php echo $fornecedor->id_fornecedor ?>">
+                                                <svg class="w-5 h-5" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                                    <path fill="none" d="M0 0h24v24H0z" />
+                                                    <path d="M15.728 9.686l-1.414-1.414L5 17.586V19h1.414l9.314-9.314zm1.414-1.414l1.414-1.414-1.414-1.414-1.414 1.414 1.414 1.414zM7.242 21H3v-4.243L16.435 3.322a1 1 0 0 1 1.414 0l2.829 2.829a1 1 0 0 1 0 1.414L7.243 21z" />
+                                                </svg>
+                                            </a>
+                                        </div>
+                                        <div class="tooltip" data-tip="Excluir">
+                                            <a class="btn btn-square btn-outline" href="/fornecedor/deletar/<?php echo $fornecedor->id_fornecedor ?>">
+                                                <svg class="w-5 h-5" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                                    <path fill="none" d="M0 0h24v24H0z" />
+                                                    <path d="M17 6h5v2h-2v13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V8H2V6h5V3a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v3zm1 2H6v12h12V8zm-4.586 6l1.768 1.768-1.414 1.414L12 15.414l-1.768 1.768-1.414-1.414L10.586 14l-1.768-1.768 1.414-1.414L12 12.586l1.768-1.768 1.414 1.414L13.414 14zM9 4v2h6V4H9z" />
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            <?php endforeach ?>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th>Excluir?</th>
+                                <th>Nome vendedor</th>
+                                <th>Email</th>
+                                <th>CNPJ</th>
+                                <th>Razão Social</th>
+                                <th>Nome Fantasia</th>
+                                <th>Telefone</th>
+                                <th>Celular</th>
+                                <th></th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                <div class="mt-8">
+                    <button class="btn btn-outline" type="submit">Excluir selecionado(s)</button>
+                </div>
+            </form>
+        <?php else : ?>
+            <div class="mt-5">
+                <div class="alert">
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                        </svg>
+                        <span>Desculpe: Não tem nenhum fornecedor por aqui.</span>
+                    </div>
+                </div>
+            </div>
+        <?php endif ?>
     </section>
 </main>
