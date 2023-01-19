@@ -7,7 +7,8 @@ class Produto
     public function index()
     {
         // PRODUTOS
-        read('produto');
+        read('produto', 'id_produto,nome_produto,valor_produto,nome_produto,peso,quantidade_estoque,nome_fantasia,telefone');
+        tableJoinWithFK('fornecedor','id_fornecedor');
         $produtos = execute();
 
         return [
@@ -21,10 +22,15 @@ class Produto
 
     public function create()
     {
+        // CARREGANDO IDs DOS FORNECEDORES
+        read('fornecedor', 'id_fornecedor,nome_fantasia');
+        $fornecedores = execute();
+
         return [
             'view' => 'adicionar-produto.php',
             'data' => [
                 'title' => 'Adicionar produto - Teste PHP',
+                'fornecedores' => $fornecedores
             ]
         ];
     }
@@ -35,7 +41,8 @@ class Produto
             'nome_produto'          => 'required',
             'valor_produto'         => 'required',
             'peso'                  => 'required',
-            'quantidade_estoque'    => 'required'
+            'quantidade_estoque'    => 'required',
+            'id_fornecedor'         => 'required'
         ], persistInputs: true);
 
         // SE A VALIDAÇÃO NÃO PASSAR, REDIRECIONA PARA PREENCHER O FORMULÁRIO NOVAMENTE
@@ -77,7 +84,8 @@ class Produto
             'nome_produto'          => 'required',
             'valor_produto'         => 'required',
             'peso'                  => 'required',
-            'quantidade_estoque'    => 'required'
+            'quantidade_estoque'    => 'required',
+            'id_fornecedor'         => 'required'
         ], persistInputs: true);
 
         if (!$validate) {
