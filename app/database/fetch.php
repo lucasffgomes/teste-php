@@ -28,6 +28,9 @@ function read(string $table, string $fields = '*')
     $query['sql'] = "SELECT {$fields} FROM {$table}";
 }
 
+/**
+ * Função responsável por configurar o limite de registros vindos do banco
+ */
 function paginate(string|int $perPage = 10)
 {
     global $query;
@@ -40,7 +43,7 @@ function paginate(string|int $perPage = 10)
     $rowCount = execute(rowCount: true);
 
     // PEGA A PAGINA DA QUERY STRING DA URL
-    $page = strip_tags($_GET['page']);
+    $page = isset($_GET['page']) ? strip_tags($_GET['page']) : null;
 
     $page = $page ?? 1;
 
@@ -51,6 +54,42 @@ function paginate(string|int $perPage = 10)
     $query['paginate'] = true;
 
     $query['sql'] = "{$query['sql']} LIMIT {$perPage} OFFSET {$offset}";
+}
+
+/**
+ * Função respona'vel por renderizar os links de paginação na tela.
+ */
+function render()
+{
+    global $query;
+
+    $pageCount = $query['pageCount'];
+    $currentPage = $query['currentPage'];
+
+    $links = '<div class="btn-group">';
+
+    if ($currentPage > 1) {
+        $previous = $currentPage - 1;
+        $links .= "<a href='?page=1' class='btn btn-outline'>Primeira</a>";
+        $links .= "<a href='?page={$previous}' class='btn btn-outline'>Anterior</a>";
+    }
+
+    $classCSS = '';
+    for ($i = 1; $i <= $pageCount; $i++) {
+        $page = "?page={$i}";
+        $classCSS = $currentPage == $i ? 'btn-active' : '';
+        $links .= "<a href='{$page}' class='btn btn-outline {$classCSS}'>{$i}</a>";
+    }
+
+    if ($currentPage < $pageCount) {
+        $next = $currentPage + 1;
+        $links .= "<a href='?page={$next}' class='btn btn-outline'>Próxima</a>";
+        $links .= "<a href='?page={$pageCount}' class='btn btn-outline'>Última</a>";
+    }
+
+    $links .= '</div>';
+
+    return $links;
 }
 
 /**
