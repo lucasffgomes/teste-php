@@ -12,9 +12,9 @@ class Produtos
 
         if (!$deleted) {
             setFlash('message', 'Ocorreu um erro ao deletar, tente novamente em breve');
-            return redirect('/listar/produtos');
+            return redirect('/listar/produtos/');
         }
 
-        return redirect('/listar/produtos');
+        return redirect('/listar/produtos/');
     }
 }

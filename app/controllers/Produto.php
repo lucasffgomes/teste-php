@@ -60,7 +60,7 @@ class Produto
 
         deleteOld('old');
 
-        return redirect('/listar/produtos');
+        return redirect('/listar/produtos/');
     }
 
     public function edit($params)
@@ -99,7 +99,7 @@ class Produto
             return redirect('/produto/editar' . $params['editar']);
         }
 
-        return redirect('/listar/produtos');
+        return redirect('/listar/produtos/');
     }
 
     public function destroy($params)
@@ -111,6 +111,6 @@ class Produto
             return redirect('/listar/produtos');
         }
 
-        return redirect('/listar/produtos');
+        return redirect('/listar/produtos/');
     }
 }

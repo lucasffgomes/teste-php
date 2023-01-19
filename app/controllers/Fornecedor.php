@@ -8,13 +8,15 @@ class Fornecedor
     {
         // FORNECEDORES
         read('fornecedor');
+        paginate(5);
         $fornecedores = execute();
 
         return [
             'view' => 'listar-fornecedores.php',
             'data' => [
                 'title' => 'Listar fornecedores - Teste PHP',
-                'fornecedores' => $fornecedores
+                'fornecedores' => $fornecedores,
+                'links' => render()
             ]
         ];
     }
@@ -56,7 +58,7 @@ class Fornecedor
 
         deleteOld('old');
 
-        return redirect('/listar/fornecedores');
+        return redirect('/listar/fornecedores/');
     }
 
     public function edit($params)
@@ -97,7 +99,7 @@ class Fornecedor
             return redirect('/fornecedor/editar' . $params['editar']);
         }
 
-        return redirect('/listar/fornecedores');
+        return redirect('/listar/fornecedores/');
     }
 
     public function destroy($params)
@@ -106,9 +108,9 @@ class Fornecedor
 
         if (!$deleted) {
             setFlash('message', 'Ocorreu um erro ao deletar, tente novamente em breve');
-            return redirect('/listar/fornecedores');
+            return redirect('/listar/fornecedores/');
         }
 
-        return redirect('/listar/fornecedores');
+        return redirect('/listar/fornecedores/');
     }
 }

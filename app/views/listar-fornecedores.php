@@ -7,9 +7,9 @@
             <div class="flex-none">
                 <ul class="menu menu-horizontal px-1 space-x-2">
                     <li><a href="/">Home</a></li>
-                    <li><a class="active" href="/listar/fornecedores">Listar fornecedores</a></li>
+                    <li><a class="active" href="/listar/fornecedores/">Listar fornecedores</a></li>
                     <li><a href="/adicionar/fornecedor">Adicionar fornecedor</a></li>
-                    <li><a href="/listar/produtos">Listar produtos</a></li>
+                    <li><a href="/listar/produtos/">Listar produtos</a></li>
                     <li><a href="/adicionar/produto">Adicionar produto</a></li>
                 </ul>
             </div>
@@ -86,8 +86,13 @@
                         </tfoot>
                     </table>
                 </div>
-                <div class="mt-8">
-                    <button class="btn btn-outline" type="submit">Excluir selecionado(s)</button>
+                <div class="mt-8 flex justify-between">
+                    <div>
+                        <button class="btn btn-outline" type="submit">Excluir selecionado(s)</button>
+                    </div>
+                    <div>
+                        <?php echo $links ?>
+                    </div>
                 </div>
             </form>
         <?php else : ?>
