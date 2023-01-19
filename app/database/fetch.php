@@ -28,6 +28,31 @@ function read(string $table, string $fields = '*')
     $query['sql'] = "SELECT {$fields} FROM {$table}";
 }
 
+function paginate(string|int $perPage = 10)
+{
+    global $query;
+
+    if (isset($query['limit'])) {
+        throw new Exception('A paginação não poser ser chamada com o limite.');
+    }
+
+    // CONTABILIZA A QUANTIDADE DE REGISTROS
+    $rowCount = execute(rowCount: true);
+
+    // PEGA A PAGINA DA QUERY STRING DA URL
+    $page = strip_tags($_GET['page']);
+
+    $page = $page ?? 1;
+
+    $query['currentPage'] = (int) $page;
+    $query['pageCount'] = (int) ceil($rowCount / $perPage);
+    $offset = ($page - 1) * $perPage;
+
+    $query['paginate'] = true;
+
+    $query['sql'] = "{$query['sql']} LIMIT {$perPage} OFFSET {$offset}";
+}
+
 /**
  * Função responsável por filtrar registros retornados de uma consulta ao banco.
  */
