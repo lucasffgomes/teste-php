@@ -82,8 +82,13 @@
                             </tr>
                         </tfoot>
                     </table>
-                    <div class="mt-8">
+                </div>
+                <div class="mt-8 flex justify-between">
+                    <div>
                         <button class="btn btn-outline" type="submit">Excluir selecionado(s)</button>
+                    </div>
+                    <div>
+                        <?php echo $links ?>
                     </div>
                 </div>
             </form>
