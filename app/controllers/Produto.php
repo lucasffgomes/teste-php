@@ -8,14 +8,16 @@ class Produto
     {
         // PRODUTOS
         read('produto', 'id_produto,nome_produto,valor_produto,nome_produto,peso,quantidade_estoque,nome_fantasia,telefone');
-        tableJoinWithFK('fornecedor','id_fornecedor');
+        tableJoinWithFK('fornecedor', 'id_fornecedor');
+        paginate(5);
         $produtos = execute();
 
         return [
             'view' => 'listar-produtos.php',
             'data' => [
                 'title' => 'Listar produtos - Teste PHP',
-                'produtos' => $produtos
+                'produtos' => $produtos,
+                'links' => render()
             ]
         ];
     }
@@ -69,11 +71,16 @@ class Produto
         where('id_produto', $params['editar']);
         $produto = execute();
 
+        // CARREGANDO IDs DOS FORNECEDORES
+        read('fornecedor', 'id_fornecedor,nome_fantasia');
+        $fornecedores = execute();
+
         return [
             'view' => 'editar-produto.php',
             'data' => [
                 'title' => 'Editar produto - Teste PHP',
-                'produto' => $produto
+                'produto' => $produto,
+                'fornecedores' => $fornecedores
             ]
         ];
     }
