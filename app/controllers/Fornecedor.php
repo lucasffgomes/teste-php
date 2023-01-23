@@ -96,7 +96,7 @@ class Fornecedor
 
         if (!$updated) {
             setFlash('message', 'Ocorreu um erro ao editar, tente novamente em breve');
-            return redirect('/fornecedor/editar' . $params['editar']);
+            return redirect('/fornecedor/editar/' . $params['editar']);
         }
 
         return redirect('/listar/fornecedores/');
